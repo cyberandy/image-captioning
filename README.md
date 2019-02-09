@@ -10,8 +10,10 @@ To run the script simply:
   - Login to your WordPress dashboard, and navigate to Tools Export.
   - Choose to export Media content.
   - Click Download Export File and the XML content will be downloaded in .xml format with a date on its file name.
-### 2. Add your [Microsoft Computer Vision API Key](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) in `line 16` 
-### 3. Replace `line 31` with the name of the XML file you exported from WordPress
+### 2. Add your [Microsoft Computer Vision API Key](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) 
+  - Update [line 16](https://github.com/cyberandy/image-captioning/blob/f669b8ac75757f7a85ff951309ac898d7a618ee2/generate-descriptions.py#L16) 
+### 3. Replace the name of the XML file that you exported from WordPress
+  - Update line 31
 ### 4. Make sure you have all the required libraries installed
   - time 
   - requests
