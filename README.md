@@ -1,4 +1,4 @@
-# Generating Image Description using Microsoft Computer Vision API
+# Generating Image Description using Computer Vision
 ### A WordLift SEO experiment
 
 This script demonstrates how to use Python with the Microsoft Computer Vision API (provided as part of the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)) to generate meta description for images stored on a WordPress website.
