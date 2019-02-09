@@ -4,7 +4,7 @@
 This script demonstrates how to use Python with the Microsoft Computer Vision API (provided as part of the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)) to generate meta description for images stored on a WordPress website.
 
 ## Instructions
-To run the script simply: 
+To run the script simply download it and follow these steps: 
 
 ### 1. Export WordPress XML Media Contents
   - Login to your WordPress dashboard, and navigate to Tools Export.
@@ -13,8 +13,9 @@ To run the script simply:
 ### 2. Add your [Microsoft Computer Vision API Key](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) 
   - Update [line 16](https://github.com/cyberandy/image-captioning/blob/f669b8ac75757f7a85ff951309ac898d7a618ee2/generate-descriptions.py#L16) 
 ### 3. Replace the name of the XML file that you exported from WordPress
-  - Update line 31
-### 4. Make sure you have all the required libraries installed
+  - Update [line 31](https://github.com/cyberandy/image-captioning/blob/dcbb1624ef5322d17f7abe07b47c90031282adeb/generate-descriptions.py#L31)
+### 4. Make sure you have all the required libraries installed 
+If not use `pip install` to install the libraries below: 
   - time 
   - requests
   - operator
