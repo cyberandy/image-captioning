@@ -7,10 +7,11 @@
 This script uses **Python** with the Microsoft Computer Vision API (provided as part of the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)) to generate meta description for images stored on a WordPress website. 
 You will need an API key from Microsoft and the export of your WordPress Media Library that can be done using the WordPress Export Tool. The result is a CSV file containing the URL of the image, the title of the image, the proposed description for the image and a confidence score. The script will skip the analysis if the description is already present in your media library.   
 
-Here is an example generated with the same code and the description written on the image. Not perfect, but still impressive.
+Here is an example generated with the same code: the description, in this case, is written on the image. 
 
 <img src="img/sample1.png" width="400">
 
+Not perfect, but still quite impressive.
 
 ## Instructions
 To run the script simply download it and follow these steps: 
