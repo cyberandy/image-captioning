@@ -1,3 +1,6 @@
+<a href="https://wordlift.io"><img src="img/Wl-logo-horizontal.png"/></a>
+
+
 # SEO image optimization using Computer Vision
 ### A WordLift experiment to generate image captions
 
