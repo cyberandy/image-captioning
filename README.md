@@ -9,7 +9,7 @@ You will need an API key from Microsoft and the export of your WordPress Media L
 
 Here is an example generated with the same code and the description written on the image. Not perfect, but still impressive.
 
-<img src="img/sample1.png"/ width="400">
+<img src="img/sample1.png" width="400">
 
 
 ## Instructions
