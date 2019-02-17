@@ -3,7 +3,6 @@ from __future__ import print_function
 # Import libraries
 import time 
 import requests
-import cv2
 import operator
 import numpy as np
 import pandas as pd
@@ -28,12 +27,17 @@ headers['Content-Type'] = 'application/json'
 
 
 # Open the Media XML file that was generated with WordPress Export
-with open('test.wordpress.image.feed.xml') as fd: #Using _test.xml file for testing
+with open('designsampsigns.wordpress.2019-02-05_test.xml') as fd: #Using _test.xml file for testing
     
     raw = xmltodict.parse(fd.read())
 
-# Create a dictionary from the items in the XML
+# Create a list from the items in the XML containing title, url and description
 data_x = [[r["title"], r["guid"]["#text"], r["description"]] for r in raw["rss"]["channel"]["item"]]
+
+# Add confidence to the list for each item
+for k in data_x:
+    k.append("confidence")
+
 print("Number of images", len(data_x)) 
 
 # Does the actual results request to the Computer Vision API
@@ -84,28 +88,39 @@ def processRequest( json, data, headers, params ):
         
     return result
 
-
-# Loop in the dictionary and send the request to the Computer Vision 
+# Loop in the list and send the request to the Computer Vision 
 for k in data_x:
-    print(k[1])  #Print URL of the image
+    if k[2] is None: #Call the API only if the description is missing
+        print(k[1])  #Print URL of the image
 
-    urlImage = k[1] 
-    json = { 'url': urlImage } #Here is the json for sending out the request
+        urlImage = k[1] 
+        json = { 'url': urlImage } #Here is the json for sending out the request
 
-    data = None
+        data = None
+        
+        result = processRequest( json, data, headers, params )
+        print(result)
 
-    result = processRequest( json, data, headers, params )
-    print(result)
- 
-# Extract the caption if available
+        # Extract the caption if available and the confidence value
+        # Extract the caption if available and the confidence value
+        if result is not None:
+            if 'description' in result:
+                try:    #Error handling 
+                    description = result['description']['captions'][0]['text'] 
+                    confidence = result['description']['captions'][0]['confidence']
+                    k[2] = description #Replace Description value 
+                    k[3] = confidence #Replace Description value 
+                except (IndexError, ValueError):
+                    description = 'null'  
+                    print(ValueError)  
 
-    if result is not None:
-        if 'description' in result:
-            description = result['description']['captions'][0]['text']
-            k[2] = description #Replace Description value 
-            print(k[2])  #Print Description   
+                print(k[2])  #Print Description    
+    else:
+        print("Description available:", k[2])       
+        k[3] = None #Leave confidence blank
 
-df = pd.DataFrame(data_x, columns=["title", "url", "description"])
+# Save results to a CSV
+df = pd.DataFrame(data_x, columns=["title", "url", "description", "confidence"])
 df.to_csv("out.csv", encoding='utf-8', index=False)
 print("Results saved on CSV")
 
