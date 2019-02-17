@@ -21,9 +21,9 @@ To run the script simply download it and follow these steps:
   - Choose to export Media content.
   - Click Download Export File and the XML content will be downloaded in .xml format with a date on its file name.
 ### 2. Add your [Microsoft Computer Vision API Key](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api) 
-  - Update [line 16](https://github.com/cyberandy/image-captioning/blob/f669b8ac75757f7a85ff951309ac898d7a618ee2/generate-descriptions.py#L16) 
+  - Update [line 15](https://github.com/cyberandy/image-captioning/blob/f669b8ac75757f7a85ff951309ac898d7a618ee2/generate-descriptions.py#L15) 
 ### 3. Replace the name of the XML file that you exported from WordPress
-  - Update [line 31](https://github.com/cyberandy/image-captioning/blob/dcbb1624ef5322d17f7abe07b47c90031282adeb/generate-descriptions.py#L31)
+  - Update [line 30](https://github.com/cyberandy/image-captioning/blob/dcbb1624ef5322d17f7abe07b47c90031282adeb/generate-descriptions.py#L30)
 ### 4. Make sure you have all the required libraries installed 
 If not use `pip install` to install the libraries below: 
   - time 
