@@ -4,6 +4,8 @@
 # SEO image optimization using Computer Vision
 ### A WordLift experiment to generate image captions
 
+> Here is the link to the blog post on [Image SEO using AI](https://wordlift.io/blog/en/image-seo-using-ai/)  
+
 This script uses **Python** with the Microsoft Computer Vision API (provided as part of the [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)) to generate meta description for images stored on a WordPress website. 
 You will need an API key from Microsoft and the export of your WordPress Media Library that can be done using the WordPress Export Tool. The result is a CSV file containing the URL of the image, the title of the image, the proposed description for the image and a confidence score. The script will skip the analysis if the description is already present in your media library.   
 
